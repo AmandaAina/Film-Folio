@@ -21,14 +21,14 @@ Review.init(
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
-        user_id: {
+        userId: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
             }
         },
-        movie_id: {
+        movieId: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'movie',
