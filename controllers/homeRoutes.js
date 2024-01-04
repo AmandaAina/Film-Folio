@@ -1,6 +1,21 @@
 const router = require('express').Router();
-const apiRoutes = require('./api');
+const { Movie, Review, User } = require('../models');
 
-router.use('/api', apiRoutes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
