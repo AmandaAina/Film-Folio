@@ -17,55 +17,55 @@ nav {
     justify-content: space-around;
     background-color: #555;
     padding: 10px;
+    color: white
 }
 
-section {
-    padding: 20px;
-}
-
-.genre-section {
-    margin-bottom: 20px;
-}
-
-.movies-list {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-}
-
-.movie-card {
-    display: flex;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.movie-card img {
-    max-width: 150px;
-    height: auto;
-    border-radius: 5px 0 0 5px;
-}
-
-.movie-info {
-    padding: 10px;
-}
-
-.movie-info h3 {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
+    padding: 0;
 }
 
-.movie-info p {
-    color: #777;
-    margin: 5px 0;
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #eb2020;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.favorite-btn {
-    background-color: #4caf50;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
+.genre-buttons {
+    margin-top: 20px;
+}
+
+.genre-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    text-decoration: none;
+    background-color: #ddd;
+    color: #333;
+    border: 1px solid #aaa;
+    border-radius: 50%; 
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block; 
+    width: 80px; 
+    height: 80px;
+    line-height: 80px; 
+}
+
+.central-circle {
+    order: 1; 
+    margin: auto; 
+}
+
+.genre-button:hover {
+    background-color: #ccc;
 }
