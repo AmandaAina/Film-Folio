@@ -1,6 +1,7 @@
 const User = require('./User');
 const Movie = require('./Movie');
 const Review = require('./Review');
+const Genre = require('./Genre');
 
 User.hasMany(Review, {
     foreignKey: 'userId',
@@ -12,6 +13,14 @@ Movie.hasMany(Review, {
     onDelete: 'CASCADE'
 });
 
+Movie.hasMany(Genre, {
+    foreignKey: 'movieId',
+})
+
+Genre.hasMany(Movie, {
+    foreignKey: 'movieId',
+})
+
 Review.belongsTo(User, {
     foreignKey: 'userId',
 });
@@ -20,4 +29,4 @@ Review.belongsTo(Movie, {
     foreignKey: 'movieId',
 });
 
-module.exports = { User, Movie, Review };
+module.exports = { User, Movie, Review, Genre };
