@@ -6,15 +6,20 @@ const genreData = [
     },
     {
         "genre": "Comedy"
-    }, {
+    }, 
+    {
         "genre": "Drama"
-    }, {
+    }, 
+    {
         "genre": "Horror"
-    }, {
+    }, 
+    {
         "genre": "Romance"
-    }, {
+    }, 
+    {
         "genre": "Thriller"
-    }, {
+    }, 
+    {
         "genre": "Sci-Fi"
     }
 ];
