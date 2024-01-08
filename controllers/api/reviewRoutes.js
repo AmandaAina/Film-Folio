@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { Review } = require('../../models');
 const withAuth = require('../../utils/auth');
-//Does this route through '/movie/id/'?
-router.post('/', withAuth, async (req, res) => {
+
+router.post('/movie/', withAuth, async (req, res) => {
     try {
         const newReview = await Review.create({
             ...req.body,
@@ -14,8 +14,22 @@ router.post('/', withAuth, async (req, res) => {
         res.status(400).json(err);
     }
 });
-//Same here: '/movie/id/:id'?
-router.delete('/:id', withAuth, async (req, res) => {
+
+router.put('/movie/:id', withAuth, async (req, res) => {
+    const updateReview = await Review.update(
+        {
+            reviewText: req.body.reviewText,
+        },
+        {
+            where: {
+                id: req.params.id,
+            },
+        }
+    );
+    res.json(updateReview);
+    });
+
+router.delete('/movie/:id', withAuth, async (req, res) => {
     try {
         const reviewData = await Review.destroy({
             where: {
