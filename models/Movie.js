@@ -23,7 +23,7 @@ Movie.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        actors: {
+        actor: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -31,18 +31,13 @@ Movie.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        genre: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true
-        },
-        userId: {
+        genreId: {
             type: DataTypes.INTEGER,
             references: {
-              model: 'user',
-              key: 'id',
-            },
-          },
+                model: 'genre',
+                key: 'id',
+            }
+        },
     },
     {
         sequelize,

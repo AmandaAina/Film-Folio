@@ -2,26 +2,26 @@ const { Genre } = require('../models');
 
 const genreData = [
     {
-        "genre": "Action"
+        name: "Action",
     },
     {
-        "genre": "Comedy"
+        name: "Comedy",
     }, 
     {
-        "genre": "Drama"
+        name: "Drama",
     }, 
     {
-        "genre": "Horror"
+        name: "Horror",
     }, 
     {
-        "genre": "Romance"
+        name: "Romance",
     }, 
     {
-        "genre": "Thriller"
+        name: "Thriller",
     }, 
     {
-        "genre": "Sci-Fi"
-    }
+        name: "Sci-Fi",
+    },
 ];
 
 const seedGenre = () => Genre.bulkCreate(genreData);
