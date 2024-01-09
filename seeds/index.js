@@ -7,9 +7,9 @@ const seedGenre = require('./Genre')
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
   await seedUsers();
+  await seedGenre();
   await seedMovies();
   await seedReviews();
-  await seedGenre();
 
   process.exit(0);
 };
