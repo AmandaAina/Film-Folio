@@ -9,19 +9,12 @@ Genre.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
         },
-        genre: {
+        name: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
-        },
-        movieId: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'movie',
-                key: 'id'
-            },
+            unique: true,
         },
     },
     {
