@@ -64,7 +64,7 @@ router.get('/movie/:id', async (req, res) => {
             include: [
                 {
                     model: Review,
-                    attributes: ['reviewText', 'dateCreated'],
+                    attributes: ['reviewText', 'dateCreated', 'userId'],
                 },
             ],
         });
