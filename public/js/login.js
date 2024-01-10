@@ -1,27 +1,26 @@
-const loginForm = async function(event) {
-    event.preventDefault();
-  
-    const usernameEl = document.querySelector('');
-    const passwordEl = document.querySelector('');
-  
-    const response = await fetch('', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: usernameEl.value,
-        password: passwordEl.value,
-      }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-  
-    if (response.ok) {
-      document.location.replace('');
-    } else {
-      alert('Failed to login, please try again!');
-    }
-  };
-  
-  document.querySelector('');
-  document.addEventListener('submit', loginForm);
+const validateLogin = async function(event) {
+  event.preventDefault();
+
+  const usernameEl = document.getElementById('username');
+  const passwordEl = document.getElementById('password');
+
+  const response = await fetch('/login', {
+    method: 'POST',
+    body: JSON.stringify({
+      username: usernameEl.value,
+      password: passwordEl.value,
+    }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+  if (response.ok) {
+    document.location.replace('/profile');
+  } else {
+    alert('Failed to login, please try again!');
+  }
+};
+
+document.getElementById('loginForm').addEventListener('submit', validateLogin);
 
   //Alternate login function validateLogin() {
 //     var username = document.getElementById('username').value;
