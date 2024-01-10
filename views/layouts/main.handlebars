@@ -10,8 +10,12 @@
 </head>
 <body>
     <header>
-        <h1>FilmFolio</h1>
-        <!-- Navigation links can be added here -->
+       <h1><a href="/">FilmFolio</a></h1>
+        {{#if isLoggedIn}}
+            <a href="/profile" class="btn">Access Profile</a>
+        {{else}}
+            <a href="/login" class="btn">Sign Up</a>
+        {{/if}}
     </header>
 
     <main>
