@@ -59,6 +59,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
+// Added by Noah to authenticate login or not
+app.get('/', (req, res) => {
+  res.render('main', { isLoggedIn: req.isAuthenticated() });
+});
+
 // Start the server
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening!'));
