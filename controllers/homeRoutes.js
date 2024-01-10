@@ -3,11 +3,11 @@ const { Genre, Movie, Review, User } = require('../models');
 
 router.get('/', async (req, res) => {
     try {
-        const genreList = await Genre.findAll();
+        // const genreList = await Genre.findAll();
 
-        const genres = genreList.get({ plain: true });
+        // const genres = genreList.get({ plain: true });
 
-        res.render('homepage', { genres });
+        res.render('homepage');
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
