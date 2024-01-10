@@ -1,22 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Folio</title>
-    <link rel="stylesheet" href="/Assets/homepage.css">
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
-
-    <script src="/server.js"></script>
-</head>
-
-<body>
-
     <script id="home-template" type="text/x-handlebars-template">
-        <header>
+        {{!-- <header>
             <h1>Film Folio</h1>
-        </header>
+        </header> --}}
 
         <nav>
             {{#each navLinks}}
@@ -33,7 +18,7 @@
         </div>
     </script>
 
-    <script>
+    {{!-- <script>
         var data = {
             pageTitle: "Film Folio",
             headerTitle: "Film Folio",
@@ -59,8 +44,4 @@
         var container = document.createElement('div');
         container.innerHTML = html;
         document.body.appendChild(container);
-    </script>
-
-</body>
-
-</html>
+    </script> --}}
