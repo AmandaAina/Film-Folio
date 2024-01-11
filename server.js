@@ -4,6 +4,7 @@ const path = require('path');
 const session = require('express-session');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+const gsap = require('gsap');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -31,27 +32,27 @@ app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
 // Define a route to render the homepage
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
     
 
-     res.render('homepage', {
-        pageTitle: 'Film Folio',
-       headerTitle: 'Film Folio',
-        navLinks: [
-            { link: '#', label: 'Home' },
-            { link: '#', label: 'About Us' },
-             { link: '#', label: 'Sign In' }
-        ],
-       genreButtons: [
-           { name: 'Action', link: 'Action.html' },
-            { name: 'Comedy', link: 'Comedy.html' },
-           { name: 'Drama', link: 'Drama.html' },
-           { name: 'Sci-Fi', link: 'Sci-Fi.html' },
-            { name: 'Thriller', link: 'Thriller.html' },
-            { name: 'Romance', link: 'Romance.html' }
-       ]
-   });
- });
+//      res.render('homepage', {
+//         pageTitle: 'Film Folio',
+//        headerTitle: 'Film Folio',
+//         navLinks: [
+//             { link: '#', label: 'Home' },
+//             { link: '#', label: 'About Us' },
+//              { link: '#', label: 'Sign In' }
+//         ],
+//        genreButtons: [
+//            { name: 'Action', link: 'Action.html' },
+//             { name: 'Comedy', link: 'Comedy.html' },
+//            { name: 'Drama', link: 'Drama.html' },
+//            { name: 'Sci-Fi', link: 'Sci-Fi.html' },
+//             { name: 'Thriller', link: 'Thriller.html' },
+//             { name: 'Romance', link: 'Romance.html' }
+//        ]
+//    });
+//  });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -22,11 +22,11 @@ Review.belongsTo(User, {
 });
 
 Movie.hasOne(Genre, {
-    foreignKey: 'movieId',
+    foreignKey: 'genreId',
 })
 
 Genre.belongsTo(Movie, {
-    foreignKey: 'movieId',
+    foreignKey: 'genreId',
 })
 
 module.exports = { User, Movie, Review, Genre };
