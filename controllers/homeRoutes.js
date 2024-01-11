@@ -4,16 +4,48 @@ const { Genre, Movie, Review, User } = require('../models');
 router.get('/', async (req, res) => {
     try {
          const genreList = await Genre.findAll();
+         console.log('Genre List:', genreList);
 
-         const genres = genreList.get({ plain: true });
+         const genres = genreList.map((genre) => genre.get({ plain: true }));
 
-        res.render('homepage', { genres });
+        res.render('homepage', { genres: genres } );
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     }
 
 });
+
+router.get('/genre/:id', async (req, res) => {
+    try {
+        const movieList = await Genre.findByPk(req.params.id, {
+            include: [
+                {
+                    model: Movie,
+                    attributes: ['name']
+                }
+            ]
+        })
+
+        const movies = movieList.map((movie) => movie.get({ plain: true }));
+
+        res.render('genre', { movies });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 // router.get('/:genre', async (req, res) => {
