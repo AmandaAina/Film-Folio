@@ -11,11 +11,12 @@
 <body>
     <header>
        <h1><a href="/">FilmFolio</a></h1>
-        {{!-- {{#if isLoggedIn}}
+       <img class="logo-image" src="/assets/name_logo.png" alt="FilmFolio Logo">
+        {{#if isLoggedIn}}
             <a href="/profile" class="btn">Access Profile</a>
         {{else}}
-            <a href="/login" class="btn">Sign Up</a>
-        {{/if}} --}}
+            <a href="/login" class="btn" id="loginBtn">Sign Up</a>
+        {{/if}}
     </header>
 
     <main>
